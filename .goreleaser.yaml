@@ -22,6 +22,11 @@ builds:
       - linux
       - windows
       - darwin
+    main: ./cmd/oidc
+    ldflags:
+      - -s -w
+      - -X github.com/sk1m/oidc-cli/internal/build.version={{.Version}}
+      - -X github.com/sk1m/oidc-cli/internal/build.date={{.Date}}
 
 archives:
   - format: tar.gz

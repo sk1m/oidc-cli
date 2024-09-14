@@ -21,13 +21,10 @@ func main() {
 }
 
 func mainRun() exitCode {
-	buildDate := build.Date
-	buildVersion := build.Version
-
 	factory := cmd.NewFactory()
 	ctx := context.Background()
 
-	rootCmd, err := cmd.NewCmdRoot(factory, buildVersion, buildDate)
+	rootCmd, err := cmd.NewCmdRoot(factory, build.Version(), build.Date())
 	if err != nil {
 		factory.Logger.Errorf("failed to create root command: %s", err)
 		return exitError
