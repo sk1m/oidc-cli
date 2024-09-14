@@ -1,6 +1,6 @@
 module github.com/sk1m/oidc-cli
 
-go 1.23.1
+go 1.23
 
 require (
 	github.com/coreos/go-oidc/v3 v3.11.0
