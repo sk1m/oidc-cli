@@ -57,6 +57,9 @@ brews:
     # Templates: allowed.
     name: oidc
 
+    # Folder inside the repository to put the formula.
+    # folder: Formula
+
     # Alternative names for the current recipe.
     #
     # Useful if you want to publish a versioned formula as well, so users can
@@ -244,12 +247,14 @@ brews:
       # Default: default repository branch.
       # Templates: allowed.
       # branch: master
+      branch: brew-releases/{{ .Version }}
 
       # Optionally a token can be provided, if it differs from the token
       # provided to GoReleaser
       #
       # Templates: allowed.
       # token: "{{ .Env.GITHUB_PERSONAL_AUTH_TOKEN }}"
+      token: "{{ .Env.GITHUB_TOKEN }}"
 
       # Optionally specify if this is a token from another SCM, allowing to
       # cross-publish.
@@ -274,7 +279,7 @@ brews:
         enabled: true
 
         # Whether to open the PR as a draft or not.
-        draft: true
+        # draft: true
 
         # If the pull request template has checkboxes, enabling this will
         # check all of them.
@@ -285,10 +290,10 @@ brews:
 
         # Base can also be another repository, in which case the owner and name
         # above will be used as HEAD, allowing cross-repository pull requests.
-        # base:
-        #   owner: goreleaser
-        #   name: my-repo
-        #   branch: main
+        base:
+          owner: goreleaser
+          name: oidc-cli
+          branch: master
 
       # Clone, create the file, commit and push, to a regular Git repository.
       #
