@@ -1,4 +1,6 @@
 # oidc-cli
+[![Go](https://github.com/sk1m/oidc-cli/actions/workflows/go.yml/badge.svg)](https://github.com/sk1m/oidc-cli/actions/workflows/go.yml) [![Go Report Card](https://goreportcard.com/badge/github.com/sk1m/oidc-cli)](https://goreportcard.com/report/github.com/sk1m/oidc-cli)
+
 This is a simple command line tool to interact with Open ID Connect providers.
 
 Here is an example of authentication with the Keycloak:
@@ -80,5 +82,5 @@ Global Flags:
 
 ## Contributions
 
-This is an open source software.
+This is an open source software.<br>
 Feel free to open issues and pull requests for improving code and documents.
