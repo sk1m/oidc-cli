@@ -14,6 +14,7 @@ before:
     - go mod tidy
     # you may remove this if you don't need go generate
     # - go generate ./...
+    - ./scripts/completions.sh
 
 builds:
   - env:
@@ -23,6 +24,7 @@ builds:
       - windows
       - darwin
     main: ./cmd/oidc
+    binary: oidc
     ldflags:
       - -s -w
       - -X github.com/sk1m/oidc-cli/internal/build.version={{.Version}}
@@ -42,6 +44,10 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+    files:
+      - README.md
+      - LICENSE
+      - completions/*
 
 changelog:
   sort: asc
@@ -211,10 +217,11 @@ brews:
     #
     # Template: allowed
     # Default: 'bin.install "BinaryName"'.
-    # install: |
-    #   bin.install "some_other_name"
-    #   bash_completion.install "completions/foo.bash" => "foo"
-    #   # ...
+    install: |
+      bin.install "oidc"
+      bash_completion.install "completions/oidc.bash" => "oidc"
+      zsh_completion.install "completions/oidc.zsh" => "_oidc"
+      fish_completion.install "completions/oidc.fish" 
 
     # Additional install instructions so you don't need to override `install`.
     #
