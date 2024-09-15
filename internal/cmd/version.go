@@ -9,7 +9,7 @@ import (
 func NewCmdVersion(f *Factory, version string, buildDate string) *cobra.Command {
 	v := version
 	if buildDate != "" {
-		v = fmt.Sprintf(" (%s)", buildDate)
+		v += fmt.Sprintf(" (%s)", buildDate)
 	}
 
 	cmd := &cobra.Command{
