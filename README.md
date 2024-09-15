@@ -11,7 +11,19 @@ Here is an example of authentication with the Keycloak:
 
 ### Setup
 
+```sh
+brew install sk1m/tools/oidc
+```
+
 ### Usage
+
+Simple example of login into the OIDC provider via device code flow:
+
+```sh
+oidc login {ANYNAME} \
+  --oidc-issuer-url {OIDC_URL} \
+  --oidc-client-id {OIDC_CLIENT}
+```
 
 #### Login
 
