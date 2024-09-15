@@ -27,7 +27,7 @@ builds:
     binary: oidc
     ldflags:
       - -s -w
-      - -X github.com/sk1m/oidc-cli/internal/build.version={{.Version}}
+      - -X github.com/sk1m/oidc-cli/internal/build.version={{.Tag}}
       - -X github.com/sk1m/oidc-cli/internal/build.date={{.Date}}
 
 archives:
